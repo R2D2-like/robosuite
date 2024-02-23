@@ -123,6 +123,8 @@ TEXTURE_FILES = {
     "Glass": "glass.png",
     "FeltGray": "gray-felt.png",
     "Lemon": "lemon.png",
+    "Sponge" : "/root/Research_Internship_at_GVlab/scripts/textures/sponge.png",
+
 }
 
 TEXTURES = {
