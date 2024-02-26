@@ -123,7 +123,7 @@ TEXTURE_FILES = {
     "Glass": "glass.png",
     "FeltGray": "gray-felt.png",
     "Lemon": "lemon.png",
-    "Sponge" : "/root/Research_Internship_at_GVlab/scripts/textures/sponge.png",
+    "Sponge" : "sponge.png",
 
 }
 
@@ -855,3 +855,8 @@ def get_ids(sim, elements, element_type="geom", inplace=False):
         elements = [get_ids(sim=sim, elements=ele, element_type=element_type, inplace=True) for ele in elements]
 
     return elements
+
+def update_texture(texture: str, path: str):
+    if not texture in TEXTURE_FILES:
+        TEXTURE_FILES[texture] = path
+        TEXTURES[texture] = path
