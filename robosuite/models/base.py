@@ -2,7 +2,6 @@ import io
 import os
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
-
 import robosuite.macros as macros
 from robosuite.utils import XMLError
 from robosuite.utils.mjcf_utils import (
@@ -184,7 +183,8 @@ class MujocoXML(object):
                 find_elements(root=self.asset, tags=asset.tag, attribs={"name": asset.get("name")}, return_first=True)
                 is None
             ):
-                self.asset.append(asset)
+                # self.asset.append(asset) # not work with ros-noetic-desktop-full
+                self.asset.append(ET.Element(asset.tag, asset.attrib))
 
     def get_element_names(self, root, element_type):
         """
