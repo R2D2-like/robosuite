@@ -1,6 +1,6 @@
 <mujoco model="wiping_hand">
     <worldbody>
-        <body name="wiping_gripper" pos="0 0 0.015" quat="0.707107 0 0 -0.707107">
+        <body name="wiping_gripper" pos="0 0 0.03" quat="0.707107 0 0 -0.707107">
             <site name="ft_frame" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 1" type="sphere" group="1" />
             <inertial pos="0 0 0" mass="3e-2" diaginertia="1e-2 1e-2 1e-2" />
 
@@ -52,7 +52,7 @@
             <geom type="box" group="0" pos="-0.055 0.0 0.0" size="0.005 0.03 0.005" name="wiping_surface1gx" solimp="0.001 0.3 0.01" solmix="10000" solref="0.0670053545476178 1" rgba="0.25 0.25 0.25 1" density="50" friction="1.521271018121515 0.5812962736604486 0.0001" />
 
             
-            <body name="eef" pos="0 0 0.015" quat="1 0 0 0">
+            <body name="eef" pos="0 0 0.03" quat="1 0 0 0">
                 <site name="grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1" />
                 <site name="ee_x" pos="0.1 0 0" size="0.005 .1" quat="0.707105  0 0.707108 0 " rgba="1 0 0 0" type="cylinder" group="1" />
                 <site name="ee_y" pos="0 0.1 0" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" type="cylinder" group="1" />
