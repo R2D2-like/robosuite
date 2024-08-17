@@ -1,9 +1,7 @@
 import numpy as np
-
 from robosuite.models.arenas import TableArena
 from robosuite.models.objects import CylinderObject
 from robosuite.utils.mjcf_utils import CustomMaterial, find_elements
-
 
 class WipeArena(TableArena):
     """
@@ -85,7 +83,7 @@ class WipeArena(TableArena):
             marker = CylinderObject(
                 name=marker_name,
                 size=[self.line_width / 2, 0.001],
-                rgba=[1, 1, 1, 1],
+                rgba=[1, 1, 1, 0],  # Set alpha channel to 0 for transparency
                 material=dirt,
                 obj_type="visual",
                 joints=None,
@@ -126,7 +124,7 @@ class WipeArena(TableArena):
             # Set the current marker (body) to this new position
             sim.model.body_pos[body_id] = position
             # Reset the marker visualization -- setting geom rgba alpha value to 1
-            sim.model.geom_rgba[geom_id][3] = 1
+            sim.model.geom_rgba[geom_id][3] = 0  # Set alpha channel to 0 for transparency
             # Hide the default visualization site
             sim.model.site_rgba[site_id][3] = 0
             # Sample next values in local marker trajectory
